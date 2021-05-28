@@ -52,41 +52,97 @@ The above snippet shows the main body of the method which shows the conditions a
 
 # Tests
 
-For the testing of this project I have attempted to follow good testing conventions for clear, readable and understandable code
+For the testing of this project I have attempted to follow good testing conventions for clear, readable and understandable code, during the process I have tried to employ some characteristics of a good test which are;  
 
-I have tried to follow the 5 characteristics of a good test
+- **Fast**  => A good test case is one that doesn’t take long to run
+- **Isolated**  => An isolated test suite contains tests that run without impacting other tests in the suite.  
+- **Expressive** => The easy-to-read nature of test cases make them a great form of documentation. tests should always be descriptive of the features that are being tested.
+- **Maintainable** => The best way to keep tests maintainable is to be organized, follow coding best practices, and develop a consistent process that works!
+- **Reliable** => A reliable test suite is one that provides consistent feedback, regardless of changes that may occur outside the scope of a given test. An unreliable test suite may have tests that fail intermittently, with no helpful feedback about changes that haver been made in the applications.
+- **Repeatable** => Test code should be repeatable for methods or paths with the same or similar outcomes in order to save time.
 
-- **Fast**. 
-- **Isolated**.
-- **Repeatable**. 
-- **Self-Checking**. 
-- **Timely**. 
+```c#
+ `[Test]
+        public void Plong_IfNumberEnteredEqualsZero_ReturnPlingPlangPlong()
+        {
+            Assert.That("PlingPlangPlong", Is.EqualTo(Plang.Plong(0)));
+        }`  
+```
 
-## Code coverage
+When testing I was focused more on coverage and quality. the above test gives an idea of the coverage I was trying to achieve. Starting my tests off at an input of 0 gives a good base on which to begin the testing.
 
-The name of your test should consist of three parts:
+The below test shows my minimalist approach to these tests. by minimalist I am referring to the low number I have put to start the testing of this particular path. By using the simplest possible number I can verify the behaviour that I am currently testing.
 
-- The name of the method being tested.
-- The scenario under which it's being tested.
-- The expected behavior when the scenario is invoked.
+```c#
+`[TestCase(-1, "-1")]
+        [TestCase(-1, "-1")]
+        [TestCase(34, "34")]
+        [TestCase(-34, "-34")]
+        [TestCase(19, "19")]
+        public void Plong_IfNumberHasNoRelevantFactor_ReturnNumber(int input, string expectedResult)
+        {
+            var result = Plang.Plong(input);
+            Assert.That(expectedResult, Is.EqualTo(result));
+        }`
+```
+
+This is an example of repeatable code in tests as you can see the code above and below is almost identical with only a small amount of minor differences, differences include the test case numbers and expected numbers, other than that the skeleton of the unit tests remain the same.
+
+Note - The name has also changed, where I was going along with the three step naming system before; The name of the method being tested, The scenario under which it's being tested, The expected behaviour when the scenario is invoked. The cases following this will omit the name of the method being tested, this Is because there is only 1 method being tested and therefore there is no need to continue to add the method name as it just adds more characters to the document. That being said in any normal project the name of the method is vital and should not be omitted.
+
+```c#
+[TestCase(5, "Plang")]
+        [TestCase(-5, "Plang")]
+        [TestCase(25, "Plang")]
+        [TestCase(-25, "Plang")]
+        public void IfNumberHasAFactorOf5_ReturnPlang(int input, string expectedResult)
+        {
+            var result = Plang.Plong(input);
+            Assert.That(expectedResult, Is.EqualTo(result));
+        }`
+
+`[TestCase(-7, "Plong")]
+        [TestCase(7, "Plong")]
+        [TestCase(49, "Plong")]
+        [TestCase(-49, "Plong")]
+        public void IfNumberHasAFactorOf7_ReturnPlong(int input, string expectedResult)
+        {
+            var result = Plang.Plong(input);
+            Assert.That(expectedResult, Is.EqualTo(result));
+        }
+```
+
+I have used `[TestCase]`  in these test instead of the  `[Test]` used in the first test for readability and efficiency purposes, without the use if `TestCase` the work space would be crowded because of the sheer number of unit tests for each case. By doing this I have avoided multiple asserts whilst using parameterized tests making code as clean as possible so that even a non programmer can understand what is happening
+
+Note - I have gone with the constraint-based Assert model which uses a single method of the Assert class for all assertions. The logic necessary to carry out each assertion is embedded in the constraint object passed as the second parameter to that method. I have chosen this over the classic model because it simplifies everything into 1 single universal assertion method and even though it may be irrelevant in this context it provides more information on the error than the normal `Assert..AreEqual` and is a good habit to get into for future adventures.
+
+***Below are a few more cases to show coverage of different paths***
+
+```c#
+`//All 3 Together
+        [TestCase(105, "PlingPlangPlong")]
+        [TestCase(-105, "PlingPlangPlong")]
+        [TestCase(210, "PlingPlangPlong")]
+        [TestCase(-210, "PlingPlangPlong")]
+        public void IfNumberHasAFactorOf357_ReturnPlingPlangPlong(int input, string expectedResult)
+        {
+            var result = Plang.Plong(input);
+            Assert.That(expectedResult, Is.EqualTo(result));
+        }`
+```
+
+```c#
+`[TestCase(35, "PlangPlong")]
+        [TestCase(-35, "PlangPlong")]
+        [TestCase(140, "PlangPlong")]
+        [TestCase(-140, "PlangPlong")]
+        public void IfNumberHasAFactorOf5_7_ReturnPlangPlong(int input, string expectedResult)
+        {
+            var result = Plang.Plong(input);
+            Assert.That(expectedResult, Is.EqualTo(result));
+        }`      
+```
 
 
-
-- Naming standards are important because they explicitly express the intent of the test.
-
-Arrange 
-
-Act 
-
-Assert
-
-
-
-### Avoid multiple asserts
-
-When writing your tests, try to only include one Assert per test. Common approaches to using only one assert include:
-
-- Create a separate test for each assert.
-- Use parameterized tests.
 
 # Comments
