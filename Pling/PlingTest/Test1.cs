@@ -12,17 +12,17 @@ namespace PlingTest
         }
 
         [Test]
-        public void IfNumberEnteredEqualsZero()
+        public void Plong_IfNumberEnteredEqualsZero_ReturnPlingPlangPlong()
         {
             Assert.That("PlingPlangPlong", Is.EqualTo(Plang.Plong(0)));
         }
 
-        [TestCase(-17, "-17")]
-        [TestCase(-19, "-19")]
+        [TestCase(-1, "-1")]
+        [TestCase(-1, "-1")]
         [TestCase(34, "34")]
         [TestCase(-34, "-34")]
         [TestCase(19, "19")]
-        public void IfNumberHasNoRelevantFactorReturnNumber(int input, string expectedResult)
+        public void Plong_IfNumberHasNoRelevantFactor_ReturnNumber(int input, string expectedResult)
         {
             var result = Plang.Plong(input);
             Assert.That(expectedResult, Is.EqualTo(result));
@@ -32,7 +32,7 @@ namespace PlingTest
         [TestCase(3, "Pling")]
         [TestCase(18, "Pling")]
         [TestCase(-18, "Pling")]
-        public void IfNumberHasAFactorOf_3(int input, string expectedResult)
+        public void IfNumberHasAFactorOf3_ReturnPling(int input, string expectedResult)
         {
             var result = Plang.Plong(input);
             Assert.That(expectedResult, Is.EqualTo(result));
@@ -42,7 +42,7 @@ namespace PlingTest
         [TestCase(-5, "Plang")]
         [TestCase(25, "Plang")]
         [TestCase(-25, "Plang")]
-        public void IfNumberHasAFactorOf_5(int input, string expectedResult)
+        public void IfNumberHasAFactorOf5_ReturnPlang(int input, string expectedResult)
         {
             var result = Plang.Plong(input);
             Assert.That(expectedResult, Is.EqualTo(result));
@@ -52,7 +52,7 @@ namespace PlingTest
         [TestCase(7, "Plong")]
         [TestCase(49, "Plong")]
         [TestCase(-49, "Plong")]
-        public void IfNumberHasAFactorOf_7(int input, string expectedResult)
+        public void IfNumberHasAFactorOf7_ReturnPlong(int input, string expectedResult)
         {
             var result = Plang.Plong(input);
             Assert.That(expectedResult, Is.EqualTo(result));
@@ -63,7 +63,7 @@ namespace PlingTest
         [TestCase(-105, "PlingPlangPlong")]
         [TestCase(210, "PlingPlangPlong")]
         [TestCase(-210, "PlingPlangPlong")]
-        public void IfNumberHasAFactorOf_3_5_7(int input, string expectedResult)
+        public void IfNumberHasAFactorOf357_ReturnPlingPlangPlong(int input, string expectedResult)
         {
             var result = Plang.Plong(input);
             Assert.That(expectedResult, Is.EqualTo(result));
@@ -74,7 +74,7 @@ namespace PlingTest
         [TestCase(-15, "PlingPlang")]
         [TestCase(60, "PlingPlang")]
         [TestCase(-60, "PlingPlang")]
-        public void IfNumberHasAFactorOf_3_5(int input, string expectedResult)
+        public void IfNumberHasAFactorOf3_5_ReturnPlingPlang(int input, string expectedResult)
         {
             var result = Plang.Plong(input);
             Assert.That(expectedResult, Is.EqualTo(result));
@@ -84,7 +84,7 @@ namespace PlingTest
         [TestCase(-21, "PlingPlong")]
         [TestCase(84, "PlingPlong")]
         [TestCase(-84, "PlingPlong")]
-        public void IfNumberHasAFactorOf_3_7(int input, string expectedResult)
+        public void IfNumberHasAFactorOf3_7_ReturnPlingPlong(int input, string expectedResult)
         {
             var result = Plang.Plong(input);
             Assert.That(expectedResult, Is.EqualTo(result));
@@ -94,7 +94,7 @@ namespace PlingTest
         [TestCase(-35, "PlangPlong")]
         [TestCase(140, "PlangPlong")]
         [TestCase(-140, "PlangPlong")]
-        public void IfNumberHasAFactorOf_5_7(int input, string expectedResult)
+        public void IfNumberHasAFactorOf5_7_ReturnPlangPlong(int input, string expectedResult)
         {
             var result = Plang.Plong(input);
             Assert.That(expectedResult, Is.EqualTo(result));

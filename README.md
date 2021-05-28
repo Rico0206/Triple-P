@@ -27,9 +27,32 @@ Create tests to provide as much coverage as many possible roots as possible
 
 # Program
 
+The program consists of a  single simple method that consists of a single method that takes in an integer input and returns a string based on the condition that it has a factor of 3, 5 or 7.
 
+`public static string Plong(int input)` => code snippet shows integer input, method has been made static because that there is no need to instantiate as this will only ever be used for testing.
+
+`string ans = null;` => string declared as null to be changed depending on the conditions that are met, could have used a string builder but for the purpose, focus of this exercise concatenating the string `ans` is the simplest way to get the desired effect.
+
+`if (input % 3 == 0)
+ {
+	ans += "Pling";
+ }
+if (input % 5 == 0)
+ {
+	ans += "Plang";
+ }
+	if (input % 7 == 0)
+ {
+	ans += "Plong";
+``}`
+
+The above snippet shows the main body of the method which shows the conditions and their outcomes. the project goal is to find out if the input is a factor of 3,5 and 7. a factor is simply a multiple of, therefore using the modulus sign we can find the remainder of the number and if it is equal to 0 then it is in-fact a factor of and should be concatenated onto by the relevant condition and passed onto the next condition.
+
+`return _ = ans ?? (_ = input.ToString());` => The is the final condition and return statement all in one using a ternary conditional operator. This final condition un-simplified states that if `ans ` is null then turn input into a string and make `ans` equal to input, therefore returning a string version of the input.
 
 # Tests
+
+For the testing of this project I have attempted to follow good testing conventions for clear, readable and understandable code
 
 I have tried to follow the 5 characteristics of a good test
 
