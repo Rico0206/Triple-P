@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31229.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pling", "Pling\Pling.csproj", "{D3EB7E53-B459-4A1F-AB68-28D2A4756C7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlingTest", "PlingTest\PlingTest.csproj", "{7CC3A609-B88D-400A-9E7B-B98ABE13D1CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3EB7E53-B459-4A1F-AB68-28D2A4756C7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3EB7E53-B459-4A1F-AB68-28D2A4756C7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3EB7E53-B459-4A1F-AB68-28D2A4756C7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3EB7E53-B459-4A1F-AB68-28D2A4756C7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CC3A609-B88D-400A-9E7B-B98ABE13D1CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CC3A609-B88D-400A-9E7B-B98ABE13D1CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CC3A609-B88D-400A-9E7B-B98ABE13D1CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CC3A609-B88D-400A-9E7B-B98ABE13D1CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B74401C5-BA04-4A7B-81B6-08A48515572A}
+	EndGlobalSection
+EndGlobal
