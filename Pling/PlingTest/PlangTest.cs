@@ -3,7 +3,7 @@ using Pling;
 
 namespace PlingTest
 {
-    public class Tests
+    public class PlangTests
     {
         [SetUp]
         public void Setup()
